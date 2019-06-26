@@ -22,24 +22,72 @@
     </div>
     <nav class="site-navigation">
       <ul class="navigation-list flex-wrapper">
-        <li class="navigation-item">
-          <a href="#" class="navigation-link">Каталог</a>
-          <ul class="navigation-submenu catalog-menu visually-hidden">
-            <li class="catalog-items">Новинки</li>
-            <li class="catalog-items">Сливочное</li>
-            <li class="catalog-items">Щербеты</li>
-            <li class="catalog-items">Фруктовый лед</li>
-            <li class="catalog-items">Мелорин</li>
-          </ul>
+        <li class="navigation-item submenu-container">
+          <a href="catalog.html" class="navigation-link">Каталог</a>
+          <div class="submenu-wrapper">
+            <ul class="navigation-submenu">
+              <li class="submenu-items"><a class="submenu-link border" href="#">Новинки</a></li>
+              <li class="submenu-items"><a class="submenu-link" href="#">Сливочное</a></li>
+              <li class="submenu-items"><a class="submenu-link" href="#">Щербеты</a></li>
+              <li class="submenu-items"><a class="submenu-link" href="#">Фруктовый лед</a></li>
+              <li class="submenu-items"><a class="submenu-link" href="#">Мелорин</a></li>
+            </ul>
+          </div>
         </li>
         <li class="navigation-item"><a href="#" class="navigation-link">Доставка и оплата</a></li>
         <li class="navigation-item"><a href="#" class="navigation-link">О Компании</a></li>
-        <li class="user-item search-link">
-          <a href="#" class="navigation-link user-link" aria-label="Поис по сайту"></a>
-          <input class="visually-hidden" type="search" name="site-search" id="site-search" placeholder="Что ищем?">
+        <li class="search-link">
+          <form class="site-search" action="https://echo.htmlacademy.ru" method="GET">
+            <button class="search-button" type="submit" aria-label="Поис по сайту"></button>
+            <div class="search-container">
+              <div class="search-wrapper">
+                <input class="site-search-input" type="search" id="search" name="site-search" placeholder="Что ищем?">
+              </div>
+            </div>
+          </form>
         </li>
-        <li class="user-item"><a href="#" class="navigation-link user-link login-link">Вход</a></li>
-        <li class="user-item"><a href="#" class="navigation-link user-link cart-link">2 Товара</a></li>
+        <li class="user-item">
+          <a href="#" class="navigation-link user-link login-link">Вход</a>
+          <div class="login-popup visually-hidden">
+              <form class="login-form" action="https://echo.htmlacademy.ru" method="GET">
+                <input class="login-input" type="email" name="email" id="email" placeholder="Электронная почта"
+                  aria-label="Электронный адрес">
+                <label class="visually-hidden" for="email">Электронная почта</label>
+                <input class="login-input" type="password" name="password" id="password-field" placeholder="Пароль"
+                  aria-label="Пароль">
+                <label class="visually-hidden" for="password-field">Пароль</label>
+                <button class="button login-button" type="submit">Войти</button>
+                <div class="form-links-container">
+                  <a href="#" class="form-link">Забыли пароль?</a><br>
+                  <a href="#" class="form-link">Новая регистрация</a>
+                </div>
+              </form>
+            </div>
+        </li>
+        <li class="user-item">
+          <a href="#" class="navigation-link user-link cart-link">Пусто</a>
+          <div class="cart-popup visually-hidden">
+            <ul class="cart-list">
+              <li class="cart-item flex-wrapper">
+                <button class="remove-item" type="button"></button>
+                <img class="item-image" src="/img/orange.png" alt="апельсиновый джем" width="33" height="33">
+                <a class="item-link" href="#">Пломбир с апельсиновым джемом</a>
+                <p class="item-weight">1,5кг х <span>200 руб.</span></p>
+                <p class="item-price">300 руб.</p>
+              </li>
+              <li class="cart-item flex-wrapper">
+                <button class="remove-item" type="button"></button>
+                <img class="item-image" src="/img/strawberry.png" alt="клубничный пломбир" width="33" height="33">
+                <a class="item-link" href="#">Клубничный пломбир с присыпкой
+                  из белого шоколада</a>
+                <p class="item-weight">1,5кг х <span>300 руб.</span></p>
+                <p class="item-price">450 руб.</p>
+              </li>
+            </ul>
+            <p class="summary">Итого: 750 руб.</p>
+            <button class="button" type="button">Оформить заказ</button>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
@@ -60,12 +108,12 @@
       <div class="sortby-wrapper">
         <label class="sorting-label" for="sortby">Сортировка:</label>
         <div class="catalog-select-wrapper">
-            <select name="sorting-type" id="sortby">
-              <option value="popular" selected>по популярности</option>
-              <option value="byprice">По цене</option>
-              <option value="byweight">По весу</option>
-              <option value="bydate">По дате</option>
-            </select>
+          <select name="sorting-type" id="sortby">
+            <option value="popular">по популярности</option>
+            <option value="byprice-down">сначала недорогие</option>
+            <option value="byprice-up">сначало дорогие</option>
+            <option value="bycalories">по жирности</option>
+          </select>
         </div>
       </div>
       <div class="filter-range">
@@ -139,112 +187,148 @@
       <h2 class="visually-hidden">Обязательно стоит попробовать!</h2>
       <ul class="catalog-list flex-wrapper">
         <li class="catalog-item">
-          <a href="" class="catalog-link">
-            <img src="img/orange.png" width="267" height="267" alt="" class="catalog-img">
-          </a>
-          <p class="price">310&#8381;<span>/кг</span></p>
-          <h3>
-            Сливочное с апельсиновым джемом и цитрусовой стружкой
-          </h3>
+            <a href="" class="catalog-link">
+              <img src="img/orange.png" width="266" height="267" alt="" class="catalog-img">
+            </a>
+            <p class="price">310&#8381;<span>/кг</span></p>
+            <h3>
+              Сливочное с апельсиновым джемом и цитрусовой стружкой
+            </h3>
+            <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/chocolate.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/chocolate.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">380&#8381;<span>/кг</span></p>
           <h3>
             Сливочно-кофейное с кусочками шоколада
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/strawberry.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/strawberry.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">355&#8381;<span>/кг</span></p>
           <h3>
             Сливочно-клубничное с присыпкой из белого шоколада
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/caramel.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/caramel.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">415&#8381;<span>/кг</span></p>
           <h3>
             Сливочное крем-брюле с карамельной подливкой
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/cowberry.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/cowberry.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">325&#8381;<span>/кг</span></p>
           <h3>
             Сливочное с брусничным джемом
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/blueberries.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/blueberries.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">410&#8381;<span>/кг</span></p>
           <h3>
             Сливочно-черничное с цельными ягодами черники
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/lemon.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/lemon.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">375&#8381;<span>/кг</span></p>
           <h3>
             Сливочно-лимонное с карамельной присыпкой
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/chocolate-flakes.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/chocolate-flakes.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">320&#8381;<span>/кг</span></p>
           <h3>
             Сливочное с шоколадной стружкой
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/chocolate-vanil.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/chocolate-vanil.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">440&#8381;<span>/кг</span></p>
           <h3>
             Сливочно-ванильное с кусочками шоколада
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/menthol.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/menthol.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">435&#8381;<span>/кг</span></p>
           <h3>
             Сливочное с ментоловым сиропом
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/black-chocolate.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/black-chocolate.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">355&#8381;<span>/кг</span></p>
           <h3>
             Сливочное с кусочками черного шоколада
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
         <li class="catalog-item">
           <a href="" class="catalog-link">
-            <img src="img/mint.png" width="267" height="267" alt="" class="catalog-img">
+            <img src="img/mint.png" width="266" height="267" alt="" class="catalog-img">
           </a>
           <p class="price">420&#8381;<span>/кг</span></p>
           <h3>
             Сливочное с мятныи сиропом
           </h3>
+          <div class="button-wrapper">
+              <button class="button" type="button">Быстрый просмотр</button>
+            </div>
         </li>
       </ul>
     </section>
@@ -290,7 +374,21 @@
       <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> &copy; 2019</p>
     </div>
   </footer>
-
+  <div class="login-popup visually-hidden">
+    <form class="login-form" action="https://echo.htmlacademy.ru" method="GET">
+      <input class="login-input" type="email" name="email" id="email-field" placeholder="Электронная почта"
+        aria-label="Электронный адрес">
+      <label class="visually-hidden" for="email-field">Электронная почта</label>
+      <input class="login-input" type="password" name="password" id="password-field" placeholder="Пароль"
+        aria-label="Пароль">
+      <label class="visually-hidden" for="password-field">Пароль</label>
+      <button class="button login-button" type="submit">Войти</button>
+      <div class="form-links-container">
+        <a href="#" class="form-link">Забыли пароль?</a><br>
+        <a href="#" class="form-link">Новая регистрация</a>
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>
