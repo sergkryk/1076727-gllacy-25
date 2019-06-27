@@ -39,6 +39,20 @@ a {
   display: flex;
 }
 
+input {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #323232;
+}
+
+input::placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #999999;
+}
+
 /* базовая стилизация ссылки */
 
 .button {
@@ -1485,6 +1499,30 @@ iframe {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .6);
 }
 
+.radio-indicator:hover {
+  background: url(../img/radio-off-hover.svg) center no-repeat;
+}
+
+.checkbox-indicator:hover {
+  background: url(../img/checkbox-off-hover.svg) center no-repeat;
+}
+
+.filter-list-item input[type="radio"]:checked+.radio-indicator:hover {
+  background: url(../img/radio-on-hover.svg) center no-repeat;
+}
+
+.filter-list-item input[type="checkbox"]:checked+.checkbox-indicator:hover {
+  background: url(../img/checkbox-on-hover.svg) 1.8px 1px no-repeat;
+}
+
+input:hover {
+  box-shadow: inset 0 0 0 1px #d3d3d2;
+}
+
+input:focus {
+  border: 1px solid #8fbdec;
+  box-shadow: inset 0 0 0 1px #8fbdec;
+}
 
 
 
