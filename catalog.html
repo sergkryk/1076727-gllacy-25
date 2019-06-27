@@ -47,8 +47,8 @@
           </form>
         </li>
         <li class="user-item">
-          <a href="#" class="navigation-link user-link login-link">Вход</a>
-          <div class="login-popup visually-hidden">
+          <a href="#" class="user-link login-link">Вход</a>
+          <div class="login-popup">
               <form class="login-form" action="https://echo.htmlacademy.ru" method="GET">
                 <input class="login-input" type="email" name="email" id="email" placeholder="Электронная почта"
                   aria-label="Электронный адрес">
@@ -65,27 +65,29 @@
             </div>
         </li>
         <li class="user-item">
-          <a href="#" class="navigation-link user-link cart-link">Пусто</a>
-          <div class="cart-popup visually-hidden">
-            <ul class="cart-list">
-              <li class="cart-item flex-wrapper">
-                <button class="remove-item" type="button"></button>
-                <img class="item-image" src="/img/orange.png" alt="апельсиновый джем" width="33" height="33">
-                <a class="item-link" href="#">Пломбир с апельсиновым джемом</a>
-                <p class="item-weight">1,5кг х <span>200 руб.</span></p>
-                <p class="item-price">300 руб.</p>
-              </li>
-              <li class="cart-item flex-wrapper">
-                <button class="remove-item" type="button"></button>
-                <img class="item-image" src="/img/strawberry.png" alt="клубничный пломбир" width="33" height="33">
-                <a class="item-link" href="#">Клубничный пломбир с присыпкой
-                  из белого шоколада</a>
-                <p class="item-weight">1,5кг х <span>300 руб.</span></p>
-                <p class="item-price">450 руб.</p>
-              </li>
-            </ul>
-            <p class="summary">Итого: 750 руб.</p>
-            <button class="button" type="button">Оформить заказ</button>
+          <a href="#" class="user-link cart-link cart-added">2 товара</a>
+          <div class="popup-wrapper">
+            <div class="cart-popup">
+              <ul class="cart-list">
+                <li class="cart-item flex-wrapper">
+                  <button class="remove-item" type="button"></button>
+                  <img class="item-image" src="/img/orange.png" alt="апельсиновый джем" width="33" height="33">
+                  <a class="item-link" href="#">Пломбир с апельсиновым джемом</a>
+                  <p class="item-weight">1,5кг х <span>200 руб.</span></p>
+                  <p class="item-price">300 руб.</p>
+                </li>
+                <li class="cart-item flex-wrapper">
+                  <button class="remove-item" type="button"></button>
+                  <img class="item-image" src="/img/strawberry.png" alt="клубничный пломбир" width="33" height="33">
+                  <a class="item-link" href="#">Клубничный пломбир с присыпкой
+                    из белого шоколада</a>
+                  <p class="item-weight">1,5кг х <span>300 руб.</span></p>
+                  <p class="item-price">450 руб.</p>
+                </li>
+              </ul>
+              <p class="summary">Итого: 750 руб.</p>
+              <button class="button" type="button">Оформить заказ</button>
+            </div>
           </div>
         </li>
       </ul>
@@ -195,7 +197,7 @@
               Сливочное с апельсиновым джемом и цитрусовой стружкой
             </h3>
             <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -207,7 +209,7 @@
             Сливочно-кофейное с кусочками шоколада
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -219,7 +221,7 @@
             Сливочно-клубничное с присыпкой из белого шоколада
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -231,7 +233,7 @@
             Сливочное крем-брюле с карамельной подливкой
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -243,7 +245,7 @@
             Сливочное с брусничным джемом
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -255,7 +257,7 @@
             Сливочно-черничное с цельными ягодами черники
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -267,7 +269,7 @@
             Сливочно-лимонное с карамельной присыпкой
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -279,7 +281,7 @@
             Сливочное с шоколадной стружкой
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -291,7 +293,7 @@
             Сливочно-ванильное с кусочками шоколада
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -303,7 +305,7 @@
             Сливочное с ментоловым сиропом
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -315,7 +317,7 @@
             Сливочное с кусочками черного шоколада
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
         <li class="catalog-item">
@@ -327,7 +329,7 @@
             Сливочное с мятныи сиропом
           </h3>
           <div class="button-wrapper">
-              <button class="button" type="button">Быстрый просмотр</button>
+              <a class="button" href="#">Быстрый просмотр</a>
             </div>
         </li>
       </ul>

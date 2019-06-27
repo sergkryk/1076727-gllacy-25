@@ -45,8 +45,8 @@
           </form>
         </li>
         <li class="user-item">
-          <a href="#" class="navigation-link user-link login-link">Вход</a>
-          <div class="login-popup visually-hidden">
+          <a href="#" class="user-link login-link">Вход</a>
+          <div class="login-popup">
             <form class="login-form" action="https://echo.htmlacademy.ru" method="GET">
               <input class="login-input" type="email" name="email" id="email" placeholder="Электронная почта"
                 aria-label="Электронный адрес">
@@ -63,7 +63,7 @@
           </div>
         </li>
         <li class="user-item">
-          <a href="#" class="navigation-link user-link cart-link">Пусто</a>
+          <a href="#" class="user-link cart-link">Пусто</a>
           <div class="cart-popup visually-hidden">
             <ul class="cart-list">
               <li class="cart-item flex-wrapper">
@@ -148,7 +148,7 @@
             Сливочное с апельсиновым джемом и цитрусовой стружкой
           </h3>
           <div class="button-wrapper">
-            <button class="button" type="button">Быстрый просмотр</button>
+            <a class="button" href="#">Быстрый просмотр</a>
           </div>
         </li>
         <li class="catalog-item">
@@ -160,7 +160,7 @@
             Сливочно-кофейное с кусочками шоколада
           </h3>
           <div class="button-wrapper">
-            <button class="button" type="button">Быстрый просмотр</button>
+            <a class="button" href="#">Быстрый просмотр</a>
           </div>
         </li>
         <li class="catalog-item">
@@ -172,7 +172,7 @@
             Сливочно-клубничное с присыпкой из белого шоколада
           </h3>
           <div class="button-wrapper">
-            <button class="button" type="button">Быстрый просмотр</button>
+            <a class="button" href="#">Быстрый просмотр</a>
           </div>
         </li>
         <li class="catalog-item">
@@ -184,7 +184,7 @@
             Сливочное крем-брюле с карамельной подливкой
           </h3>
           <div class="button-wrapper">
-            <button class="button" type="button">Быстрый просмотр</button>
+            <a class="button" href="#">Быстрый просмотр</a>
           </div>
         </li>
       </ul>
@@ -224,7 +224,7 @@
           <form class="subscribe-form" action="https://echo.htmlacademy.ru" method="GET">
             <label for="email-field" class="visually-hidden">Электронная почта</label>
             <input type="email" name="email" id="email-field" placeholder="Электронная почта">
-            <button type="submit" class="basic-btn">Отправить</button>
+            <button type="submit" class="button basic-btn">Отправить</button>
           </form>
         </div>
       </div>
@@ -276,7 +276,7 @@
       <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> &copy; 2019</p>
     </div>
   </footer>
-  <div class="feedback-popup">
+  <div class="feedback-popup visually-hidden">
     <h2>Мы обязательно вам ответим!</h2>
     <button class="close-button"></button>
     <form class="feedback-form" action="https://echo.htmlacademy.ru" method="GET">
