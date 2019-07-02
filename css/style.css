@@ -506,6 +506,8 @@ input::placeholder {
 
 .catalog-link {
   display: block;
+  position: relative;
+  z-index: 2;
   font-size: 16px;
   line-height: 22px;
   font-weight: 500;
