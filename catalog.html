@@ -2,6 +2,7 @@
 <html lang="ru">
    <head>
       <meta charset="utf-8">
+      <meta name="format-detection" content="telephone=no">
       <title>HTML Academy: Глейси</title>
       <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic-ext"
          rel="stylesheet">
@@ -19,14 +20,14 @@
                С 10 до 20, ежедневно<span class="phone-number">8 812 450-25-25</span>
             </p>
          </div>
-         <nav class="site-navigation">
+         <nav class="site-navigation flex-wrapper">
             <ul class="navigation-list flex-wrapper">
                <li class="navigation-item submenu-container active-page">
                   <a href="catalog.html" class="navigation-link">Каталог</a>
                   <div class="submenu-wrapper">
                      <ul class="navigation-submenu">
                         <li class="submenu-items"><a class="submenu-link border" href="#">Новинки</a></li>
-                        <li class="submenu-items"><a class="submenu-link" href="#">Сливочное</a></li>
+                        <li class="submenu-items"><a class="submenu-link active-link" href="#">Сливочное</a></li>
                         <li class="submenu-items"><a class="submenu-link" href="#">Щербеты</a></li>
                         <li class="submenu-items"><a class="submenu-link" href="#">Фруктовый лед</a></li>
                         <li class="submenu-items"><a class="submenu-link" href="#">Мелорин</a></li>
@@ -35,6 +36,8 @@
                </li>
                <li class="navigation-item"><a href="#" class="navigation-link">Доставка и оплата</a></li>
                <li class="navigation-item"><a href="#" class="navigation-link">О Компании</a></li>
+            </ul>
+            <ul class="user-navigation flex-wrapper">
                <li class="search-link">
                   <form class="site-search" action="https://echo.htmlacademy.ru" method="GET">
                      <button class="search-button" type="submit" aria-label="Поис по сайту"></button>
@@ -55,10 +58,12 @@
                         <input class="login-input" type="password" name="password" id="password-field" placeholder="Пароль"
                            aria-label="Пароль">
                         <label class="visually-hidden" for="password-field">Пароль</label>
-                        <button class="button login-button" type="submit">Войти</button>
-                        <div class="form-links-container">
-                           <a href="#" class="form-link">Забыли пароль?</a><br>
-                           <a href="#" class="form-link">Новая регистрация</a>
+                        <div class="flex-wrapper">
+                           <button class="button login-button" type="submit">Войти</button>
+                           <div class="form-links-container flex-wrapper">
+                              <a href="#" class="form-link">Забыли пароль?</a>
+                              <a href="#" class="form-link">Новая регистрация</a>
+                           </div>
                         </div>
                      </form>
                   </div>
@@ -70,17 +75,21 @@
                         <ul class="cart-list">
                            <li class="cart-item flex-wrapper">
                               <a class="remove-item" href="#"></a>
-                              <img class="item-image" src="/img/orange.png" alt="апельсиновый джем" width="33" height="33">
+                              <div class="cart-img-wrapper">
+                                 <img class="item-image" src="img/orange.png" alt="апельсиновый джем" width="33" height="33">
+                              </div>
                               <a class="item-link" href="#">Пломбир с апельсиновым джемом</a>
-                              <p class="item-weight">1,5кг х <span>200 руб.</span></p>
+                              <p class="item-weight">1,5 кг х <span>200 руб.</span></p>
                               <p class="item-price">300 руб.</p>
                            </li>
                            <li class="cart-item flex-wrapper">
                               <a class="remove-item" href="#"></a>
-                              <img class="item-image" src="/img/strawberry.png" alt="клубничный пломбир" width="33" height="33">
+                              <div class="cart-img-wrapper">
+                                 <img class="item-image" src="img/strawberry.png" alt="клубничный пломбир" width="33" height="33">
+                              </div>
                               <a class="item-link" href="#">Клубничный пломбир с присыпкой
                               из белого шоколада</a>
-                              <p class="item-weight">1,5кг х <span>300 руб.</span></p>
+                              <p class="item-weight">1,5 кг х <span>300 руб.</span></p>
                               <p class="item-price">450 руб.</p>
                            </li>
                         </ul>
@@ -118,7 +127,9 @@
                </div>
             </div>
             <div class="filter-range">
-               <div class="filter-range-title">Цена: 100 руб. &mdash; 500 руб.</div>
+               <span class="range-title">Цена:</span>
+               <input class="range-input min-price" type="text" name="price-from" value="100"><span class="input-currency">руб. &mdash;</span>
+               <input class="range-input max-price" type="text" name="price-up" value="500"><span class="input-currency">руб.</span>
                <div class="range-controls">
                   <div class="scale">
                      <div class="bar"></div>
@@ -131,12 +142,12 @@
                <legend>Жирность:</legend>
                <ul class="filter-list flex-wrapper">
                   <li class="filter-list-item">
-                     <input type="radio" name="source" id="zero" value="zero" checked>
+                     <input type="radio" name="source" id="zero" value="zero">
                      <span class="radio-indicator"></span>
                      <label for="zero">0%</label>
                   </li>
                   <li class="filter-list-item">
-                     <input type="radio" name="source" id="toten" value="to-10">
+                     <input type="radio" name="source" id="toten" value="to-10" checked>
                      <span class="radio-indicator"></span>
                      <label for="toten">до 10%</label>
                   </li>
@@ -153,7 +164,7 @@
                </ul>
             </fieldset>
             <fieldset class="filter-heading">
-               <legend>Наполнители:</legend>
+               <legend class="checkbox-legend">Наполнители:</legend>
                <ul class="filter-list addons-list flex-wrapper">
                   <li class="filter-list-item ">
                      <input type="checkbox" name="chocolates" id="chocolates" checked>
@@ -230,8 +241,8 @@
                <li class="catalog-item">
                   <img src="img/cowberry.png" width="266" height="267" alt="" class="catalog-img">
                   <p class="price">325&#8381;<span>/кг</span></p>
-                  <a class="catalog-link" href="#">
-                  Сливочное с брусничным <br>джемом
+                  <a class="catalog-link two-line" href="#">
+                  Сливочное с брусничным джемом
                   </a>
                   <div class="button-wrapper">
                      <a class="button" href="#">Быстрый просмотр</a>
@@ -332,7 +343,7 @@
          </div>
          <ul class="footer-list flex-wrapper">
             <li class="list-item">
-               <a href="#" class="footer-link">Для поставщиков</a>
+               <a href="#" class="footer-link favorite-link">Для поставщиков</a>
             </li>
             <li class="list-item">
                <a href="#" class="footer-link">Наши документы</a>
